@@ -79,6 +79,19 @@ public class DependencyResolving {
                     }
                 }
             }
+            File[] files = new File("C:\\Users\\Vladimir\\Documents\\NetBeansProjects\\DependenciesResolving\\src\\dependencies\\installed_modules").listFiles();
+            ArrayList<String> fileNames = new ArrayList<String>();
+            for(File file: files) {
+                fileNames.add(file.getName());
+            }
+            Set<String> keys = tools.keySet();
+            for(String s: keys) {
+                File file = new File("C:\\Users\\Vladimir\\Documents\\NetBeansProjects\\DependenciesResolving\\src\\dependencies\\installed_modules\\" + s);
+                                    if (file.createNewFile()) {
+                                        System.out.println("Installing "+file.getName());
+                                    } else {
+                                    }
+            }
         } catch (IOException ex) {
             Logger.getLogger(DependencyResolving.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParseException ex) {
